@@ -4,8 +4,8 @@ import Banner from "../Banner/Banner";
 
 const Content = () => {
   return (
-    <div className="h-screen container pt-4 bg-gray-100 mx-auto">
-        <Banner />
+    <div className="">
+        
     </div>
   );
 };
