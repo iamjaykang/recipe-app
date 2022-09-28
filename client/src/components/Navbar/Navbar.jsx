@@ -15,10 +15,10 @@ const Navbar = ({ setQuery }) => {
     <div className="container mx-auto bg-white">
       <nav>
         <ul className="flex pl-36 gap-14 border-y py-4">
-          <li onClick={handleDropDown}>Recipes</li>
+          <li onClick={handleDropDown} className='cursor-pointer'>Recipes</li>
           {dropDown ? (
             <div className="absolute mt-8 bg-white w-24">
-              <ul className="">
+              <ul className="cursor-pointer">
                 {meals.map((meal, index) => (
                   <li key={meal} onClick={() => setQuery(meal)} className="border-b">
                     {meal}
