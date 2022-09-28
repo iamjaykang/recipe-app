@@ -26,9 +26,9 @@ function App() {
   const recipesApi = async () => {
     try {
       const recipes = await RecipeSource.get(
-        `recipes/complexSearch?number=10&addRecipeInformation=true&query=${query}&instructionsRequired=true&apiKey=${process.env.REACT_APP_SPOONACULAR_API_KEY}`
+        `recipes/complexSearch?number=12&addRecipeInformation=true&query=${query}&instructionsRequired=true&apiKey=${process.env.REACT_APP_SPOONACULAR_API_KEY}`
       );
-      setRecipeArray(recipes.data);
+      setRecipeArray(recipes.data.results);
       console.log(recipes.data)
     } catch (error) {
       console.log(error);
@@ -45,10 +45,10 @@ function App() {
     <div className="App">
       <Header />
       <Navbar setQuery={setQuery}/>
-      <body className='h-screen container pt-4 bg-gray-100 mx-auto'>
+      <body className='container pt-4 bg-gray-100 mx-auto'>
       <Banner />
       <Body />
-      <Content />
+      <Content category={query} recipeArray={recipeArray}/>
       </body>
     </div>
   );
