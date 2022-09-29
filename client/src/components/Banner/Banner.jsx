@@ -1,7 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import bannerImg from "../../images/random.jpeg";
 
-const Banner = () => {
+const Banner = ({randomMeals}) => {
   return (
     <div>
     <img src={bannerImg} className="mx-auto" />
@@ -12,9 +13,9 @@ const Banner = () => {
         <p className="text-lg">Tired of deciding your next meal? Let us pick your next meal!</p>
       </div>
       <div className="absolute bg-[#be2a77] w-[230px] h-[40px] text-center rounded-sm pt-1.5">
-        <a className="">
+        <Link className="" onClick={randomMeals} to="/random-recipes">
             <span className="text-white text-lg">10 random meal recipes</span>
-        </a>
+        </Link>
       </div>
     </div>
   </div>

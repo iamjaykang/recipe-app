@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { meals } from "../../data/meals";
 
 const Navbar = ({ setQuery }) => {
@@ -21,7 +22,7 @@ const Navbar = ({ setQuery }) => {
               <ul className="cursor-pointer">
                 {meals.map((meal, index) => (
                   <li key={meal} onClick={() => setQuery(meal)} className="border-b">
-                    {meal}
+                    <Link to='/'>{meal}</Link>
                   </li>
                 ))}
               </ul>
