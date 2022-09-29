@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../../images/logo.png";
 
 const Header = ({}) => {
@@ -7,8 +8,10 @@ const Header = ({}) => {
       <header>
         <div className="flex flex-row">
           <div className="flex-1 ml-4">
+            <Link to='/'>
             <img src={logo} className="w-20" />
             <span><h2 className="text-4xl text-left">Food Recipe</h2></span>
+            </Link>
           </div>
           <form className="flex flex-1 items-center justify-end">
             <div class="relative">
