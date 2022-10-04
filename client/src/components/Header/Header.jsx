@@ -7,8 +7,8 @@ const Header = ({}) => {
     <div className="container mx-auto mt-4">
       <header>
         <div className="flex flex-row">
-          <div className="flex-1 ml-4">
-            <Link to='/'>
+          <div className="flex-1 max-w-[12rem] ml-4">
+            <Link to='/' className="">
             <img src={logo} className="w-20" />
             <span><h2 className="text-4xl text-left">Food Recipe</h2></span>
             </Link>
