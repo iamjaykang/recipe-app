@@ -1,24 +1,25 @@
-import React from "react";
-import RandomContent from "../components/Content/RandomContent";
+import React, { useState } from "react";
+import SearchResults from "../components/Content/SearchResults";
 import Header from "../components/Header/Header";
 import Navbar from "../components/Navbar/Navbar";
 
-const RandomRecipes = ({
+const Search = ({
   setSearchInput,
-  query,
   setQuery,
-  randomMeal,
+  query,
+  recipeArray,
 }) => {
+
   return (
     <div>
       {" "}
       <Header setSearchInput={setSearchInput} />
       <Navbar setQuery={setQuery} />
       <body className="container pt-4 bg-gray-100 mx-auto">
-        <RandomContent category={query} recipeArray={randomMeal} />
+        <SearchResults category={query} recipeArray={recipeArray} />
       </body>
     </div>
   );
 };
 
-export default RandomRecipes;
+export default Search;

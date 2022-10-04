@@ -5,7 +5,7 @@ const Content = ({ category, recipeArray }) => {
   return (
     <div className="">
       <div className="">
-        <h1 className="ml-40 text-left text-3xl mt-4">
+        <h1 className="ml-5 text-left text-3xl mt-4">
           {category.charAt(0).toUpperCase() + category.slice(1)}
         </h1>
       </div>

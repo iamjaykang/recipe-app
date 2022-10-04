@@ -1,19 +1,53 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../images/logo.png";
 
-const Header = ({}) => {
+const Header = ({ setSearchInput }) => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
+  const search = () =>
+    navigate({
+      pathname: "/search",
+      search: `?query=${searchQuery}`,
+    });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSearchInput(e.target.value);
+  };
+
+  const handleChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const handleClick = (e) => {
+    search();
+    setSearchInput(e.target.value);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      search();
+      setSearchInput(e.target.value);
+    }
+  };
+
   return (
     <div className="container mx-auto mt-4">
       <header>
         <div className="flex flex-row">
           <div className="flex-1 max-w-[12rem] ml-4">
-            <Link to='/' className="">
-            <img src={logo} className="w-20" />
-            <span><h2 className="text-4xl text-left">Food Recipe</h2></span>
+            <Link to="/" className="">
+              <img src={logo} className="w-20" />
+              <span>
+                <h2 className="text-4xl text-left">Food Recipe</h2>
+              </span>
             </Link>
           </div>
-          <form className="flex flex-1 items-center justify-end">
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-1 items-center justify-end"
+          >
             <div class="relative">
               <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                 <svg
@@ -31,14 +65,18 @@ const Header = ({}) => {
                 </svg>
               </div>
               <input
-                type="text"
+                type="search"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-46 pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Search"
+                value={searchQuery}
+                onChange={handleChange}
+                onKeyDown={handleKeyDown}
                 required
               />
             </div>
             <button
               type="submit"
+              onClick={handleClick}
               className="inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               <svg

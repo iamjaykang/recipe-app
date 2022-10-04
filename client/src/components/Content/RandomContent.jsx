@@ -1,13 +1,13 @@
 import React from "react";
 import RecipeCard from "../RecipeCard/RecipeCard";
 
-const RandomContent = ({query,recipeArray}) => {
+const RandomContent = ({recipeArray}) => {
   return (
     <div>
       {" "}
       <div className="">
         <div className="">
-          <h1 className="ml-40 text-left text-3xl mt-4">
+          <h1 className="ml-5 text-left text-3xl mt-4">
             Random Recipes
           </h1>
         </div>
