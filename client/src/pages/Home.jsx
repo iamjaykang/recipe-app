@@ -1,6 +1,7 @@
 import React from "react";
 import Banner from "../components/Banner/Banner";
 import Content from "../components/Content/Content";
+import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import Navbar from "../components/Navbar/Navbar";
 
@@ -20,6 +21,7 @@ const Home = ({
         <Banner randomMeals={randomMeals} />
         <Content category={query} recipeArray={recipeArray} />
       </body>
+      <Footer />
     </div>
   );
 };
